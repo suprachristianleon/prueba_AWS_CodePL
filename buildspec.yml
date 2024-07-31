@@ -3,17 +3,19 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14
+      nodejs: 18
     commands:
       - echo Installing dependencies...
-      - node --version  # Imprime la versión de Node.js
-      - npm --version   # Imprime la versión de npm
+      - node --version
+      - npm --version
       - npm install
       - echo Installing Angular CLI...
       - npm install -g @angular/cli
+      - ng --version  # Verifica que Angular CLI está instalado
   build:
     commands:
       - echo Building the application...
+      - ng version  # Verifica la versión de Angular CLI
       - ng build --prod
 artifacts:
   files:
