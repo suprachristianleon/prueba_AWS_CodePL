@@ -5,12 +5,13 @@ phases:
     runtime-versions:
       nodejs: 14
     commands:
-      - npm install -g @angular/cli
+      - echo Installing dependencies...
       - npm install
   build:
     commands:
+      - echo Building the application...
       - ng build --prod
 artifacts:
   files:
-    - 'dist/**/*'
-  base-directory: dist
+    - '**/*'
+  base-directory: dist/prueba-aws-code-pipe-line
